@@ -1,0 +1,19 @@
+public class PrintFirstCharOfEveryWord{
+	
+public static void printFirstChar(String input){
+	char[] a = input.toCharArray();
+	
+	for(int i = 0; i < a.length ; i++)
+	{
+		if(a[i] != ' ' && (i == 0 || a[i-1] == ' ' )){
+			System.out.println(a[i]);	
+		}
+	}
+}
+
+public static void main(String[] args){
+	PrintFirstCharOfEveryWord.printFirstChar("Hello User!! Welcome");
+	PrintFirstCharOfEveryWord.printFirstChar("  Hello User!! Welcome");
+	PrintFirstCharOfEveryWord.printFirstChar("   Hello   User!!    Welcome");
+}
+}
