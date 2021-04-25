@@ -1,0 +1,24 @@
+public class CaeserCipherEncryptor{
+
+	public static String caeserCipherEncryptor(String str,int key){
+		int k = key%26;
+		String result = "";
+		
+		for(int i=0; i<=str.length()-1;i++){
+			int letterCode = (int) str.charAt(i)+k;
+			result += getNewLetter(letterCode);
+
+		}
+		return result;
+	}
+
+	public static String getNewLetter(int lCode){
+		return lCode <= 122 ? String.valueOf((char)lCode) : String.valueOf((char) (96+(lCode%122)));
+	}
+
+	public static void main(String[] args){
+	String input = "xyz";
+	int key = 2;
+	System.out.println(CaeserCipherEncryptor.caeserCipherEncryptor(input,key));
+	}
+}
